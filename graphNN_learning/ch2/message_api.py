@@ -33,3 +33,9 @@ out_dst = g.ndata['feat'] @ linear_dst
 g.srcdata.update({'out_src': out_src})
 g.dstdata.update({'out_dst': out_dst})
 g.apply_edges(fn.u_add_v('out_src', 'out_dst', 'out'))
+
+#在图的一部分上进行消息传递
+nid=[0,2,3,6,7,9]
+sg=g.subgraph(nid)
+sg.update_all(message_func,reduce_func,apply_node_func="false")
+
