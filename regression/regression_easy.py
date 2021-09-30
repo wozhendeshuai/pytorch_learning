@@ -32,3 +32,4 @@ for epoch in range(num_epochs):
     l=loss(net(features),labels)
     print(f'epoch {epoch+1},loss{1:f}')
 
+
