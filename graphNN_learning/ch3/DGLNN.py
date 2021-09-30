@@ -1,6 +1,7 @@
 import torch.nn as nn
 from dgl.utils import  expand_as_pair
 class SAGEConv(nn.Module):
+
     def __init__(self,
                  in_feats,
                  out_feats,
@@ -26,6 +27,7 @@ class SAGEConv(nn.Module):
             self.fc_self=nn.Linear(self._in_dst_feats,out_feats,bias=bias)
         self.fc_neigh=nn.Linear(self._in_src_feats,out_feats,bias=bias)
         self.reset_parameters()
+
     def reset_parameters(self):
         gain=nn.init.calculate_gain('relu')
         if self._aggre_type=='max_pool':
