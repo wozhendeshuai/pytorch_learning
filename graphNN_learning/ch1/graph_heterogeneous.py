@@ -16,3 +16,7 @@ print(g.nodes['drug'].data['hv'])
 
 g.edges['treats'].data['he']=th.zeros(1,1)
 print(g.edges['treats'].data['he'])
+import networkx as mx
+import  matplotlib.pyplot as plt
+mx.draw(g.to_networkx(),with_labels=True)
+plt.show()
